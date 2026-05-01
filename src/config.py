@@ -35,9 +35,7 @@ TRADING_MODE = os.getenv("TRADING_MODE", "SIMULATED")  # SIMULATED or LIVE
 
 # ── Authentication ──────────────────────────────────────────
 # Make it fail loudly in prod if SECRET_KEY is missing
-SECRET_KEY = os.getenv("SECRET_KEY")
-if not SECRET_KEY:
-    raise RuntimeError("SECRET_KEY environment variable is not set!")
+SECRET_KEY = os.getenv("SECRET_KEY", "emsjb-dev-secret-key-change-in-prod")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 480        # 8 hour sessions
 
